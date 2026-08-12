@@ -1,1 +1,27 @@
 # Adaptive-Immune-Profiling-Challenge...
+The adaptive immune receptor repertoire (AIRR) records, in the sequences of B-cell and
+T-cell receptors, patterns shaped by antigen exposure and immune history. That record is why
+repertoire sequencing has become attractive as a diagnostic substrate: it can provide a readout
+of host immune state rather than relying solely on downstream proxies. Converting this
+signal into a reliable classifier is methodologically non-trivial. Labels attach to whole repertoires,
+while the receptors that carry immune signal are rare, unannotated, and scattered across
+hundreds of thousands of clones, so a classifier can be accurate for reasons that are not interpretable
+in immunological terms. Here we present RepertoireMIL, a framework that couples
+repertoire-level prediction to receptor-level explanation by combining four complementary views
+of a repertoire: compositional summaries, public-clone and cluster enrichment, pretrained sequence
+embeddings, and attention-based multiple-instance learning (MIL). Sequence rankings
+are not taken from attention alone. Instead, five attribution signals are fused into a single score,
+with weights fitted for ranking stability. Public-clone mining and feature selection are confined
+to training folds to prevent leakage from label-informed feature discovery, and external validation
+uses weights frozen before the held-out cohort is unsealed. Across five AIRR-ML-25 challenge
+cohorts and an independent Emerson cytomegalovirus (CMV) cohort (six biological cohorts
+total), RepertoireMIL reached an AUROC of 0.928 under leakage-controlled internal evaluation,
+compared with 0.918 for the strongest single view, and achieved a Recovery@50 of 0.628 for
+known label-associated receptors. Top-ranked receptors matched curated VDJdb and McPASTCR
+specificities at 38.4% compared with 14.2% in the matched background (p = 0.002), and
+an external-cohort AUROC of 0.864 represented a drop of 0.064 from internal validation. Collectively,
+RepertoireMIL offers immunologists a ranked, inspectable shortlist of candidate
+receptors alongside a repertoire-level call. Two limitations should be noted: only TCR bulk
+sequencing was tested, so generalisation to paired-chain and B-cell repertoires remains to be
+demonstrated; and the attribution ground truth inherits the under-coverage of curated annotation
+databases, so Recovery@K understates true performance by an unknown margin.
