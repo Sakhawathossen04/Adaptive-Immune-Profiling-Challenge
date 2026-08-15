@@ -1,11 +1,5 @@
 # Adaptive-Immune-Profiling-Challenge...
-The adaptive immune receptor repertoire (AIRR) records, in the sequences of B-cell and T-cell receptors, patterns shaped by antigen exposure and immune history. That record is why repertoire sequencing has become attractive as a diagnostic substrate: it can provide a readout of host immune state rather than relying solely on downstream proxies. Converting this
-signal into a reliable classifier is methodologically non-trivial. Labels attach to whole repertoires,
-while the receptors that carry immune signal are rare, unannotated, and scattered across
-hundreds of thousands of clones, so a classifier can be accurate for reasons that are not interpretable
-in immunological terms. Here we present RepertoireMIL, a framework that couples
-repertoire-level prediction to receptor-level explanation by combining four complementary views
-of a repertoire: compositional summaries, public-clone and cluster enrichment, pretrained sequence
+The adaptive immune receptor repertoire (AIRR) records, in the sequences of B-cell and T-cell receptors, patterns shaped by antigen exposure and immune history. That record is why repertoire sequencing has become attractive as a diagnostic substrate: it can provide a readout of host immune state rather than relying solely on downstream proxies. Converting this signal into a reliable classifier is methodologically non trivial. Labels attach to whole repertoires, while the receptors that carry immune signal are rare, unannotated, and scattered across hundreds of thousands of clones, so a classifier can be accurate for reasons that are not interpretable in immunological terms. Here we present RepertoireMIL, a framework that couples repertoire-level prediction to receptor-level explanation by combining four complementary views of a repertoire: compositional summaries, public-clone and cluster enrichment, pretrained sequence
 embeddings, and attention-based multiple-instance learning (MIL). Sequence rankings
 are not taken from attention alone. Instead, five attribution signals are fused into a single score,
 with weights fitted for ranking stability. Public-clone mining and feature selection are confined
